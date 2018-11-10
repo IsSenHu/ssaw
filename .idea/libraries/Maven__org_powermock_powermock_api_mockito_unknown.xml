@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.powermock:powermock-api-mockito:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/powermock/powermock-api-mockito/unknown/powermock-api-mockito-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/powermock/powermock-api-mockito/unknown/powermock-api-mockito-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/powermock/powermock-api-mockito/unknown/powermock-api-mockito-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
