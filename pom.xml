@@ -6,7 +6,31 @@
     <groupId>com.ssaw</groupId>
     <artifactId>base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>commons</module>
+        <module>support-feign</module>
+        <module>support-jpa</module>
+        <module>support-mybatis</module>
+        <module>support-redis</module>
+        <module>support-es</module>
+        <module>support-mongodb</module>
+        <module>support-rocketmq</module>
+        <module>support-swagger</module>
+        <module>support-jdbc</module>
+        <module>support-jdbc-extensions</module>
+        <module>support-ldap</module>
+        <module>support-reactive-redis</module>
+        <module>support-rest</module>
+        <module>support-cassandra</module>
+        <module>support-geode</module>
+        <module>support-solr</module>
+        <module>support-pivotal-gemFire</module>
+        <module>support-couchbase</module>
+        <module>support-envers</module>
+        <module>support-neo4J</module>
+        <module>support-hadoop</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>base</name>
     <description>spring cloud 大型框架的基础项目</description>
