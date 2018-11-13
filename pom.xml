@@ -29,6 +29,7 @@
         <module>support-envers</module>
         <module>support-neo4J</module>
         <module>support-hadoop</module>
+        <module>support-druid</module>
     </modules>
     <packaging>pom</packaging>
 
