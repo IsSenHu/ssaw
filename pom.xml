@@ -142,6 +142,18 @@
             <version>0.2.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- 实现config客户端的自动重试功能所需要的依赖 需要配合spring-boot-starter-aop -->
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+
+        <!-- aop -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
     </dependencies>
 
     <profiles>

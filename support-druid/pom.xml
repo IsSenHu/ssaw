@@ -11,6 +11,7 @@
 
     <artifactId>support-druid</artifactId>
     <packaging>pom</packaging>
+    <version>0.0.2</version>
 
     <properties>
         <druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
