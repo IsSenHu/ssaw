@@ -12,6 +12,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class SecurityUtils {
 
     /**
+     * 构造方法私有
+     */
+    private SecurityUtils() {}
+
+    /**
      * 获取当前UserDetails
      * @param tClass 类型的Class
      * @param <T> 类型
