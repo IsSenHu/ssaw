@@ -15,16 +15,16 @@ public class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "create_time")
+    @Column
     private LocalDateTime createTime;
 
-    @Column(name = "modify_time")
+    @Column
     private LocalDateTime modifyTime;
 
-    @Column(name = "create_man")
+    @Column
     private String createMan;
 
-    @Column(name = "modify_man")
+    @Column
     private String modifyMan;
 
     public Long getId() {

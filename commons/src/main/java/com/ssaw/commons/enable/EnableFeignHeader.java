@@ -1,9 +1,7 @@
 package com.ssaw.commons.enable;
 
-import com.ssaw.commons.aspect.AutoRequestResolve;
 import com.ssaw.commons.properties.FeignHeaderProperties;
 import org.springframework.context.annotation.Import;
-
 import java.lang.annotation.*;
 
 /**
