@@ -41,6 +41,13 @@
             <artifactId>spring-security-core</artifactId>
             <version>5.1.1.RELEASE</version>
         </dependency>
+
+        <!-- feign -->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-core</artifactId>
+            <version>9.5.1</version>
+        </dependency>
     </dependencies>
 
 </project>
