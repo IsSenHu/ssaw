@@ -32,7 +32,9 @@
 		<module>support-druid</module>
 		<module>support-oauth2</module>
 		<module>support-statistical-certification-center-client</module>
-	</modules>
+		<module>support-inner</module>
+        <module>support-dubbo</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>base</name>
