@@ -1,7 +1,6 @@
 package com.ssaw.commons.exceptions;
 
-import org.springframework.validation.FieldError;
-import java.util.List;
+import java.util.Map;
 
 /**
  * 参数异常
@@ -9,18 +8,13 @@ import java.util.List;
  * @date 2018/11/28 16:32.
  */
 public class ParamException extends RuntimeException {
-    private List<FieldError> errors;
+    private Map<String, StringBuilder> errors;
 
-    public ParamException(List<FieldError> errors) {
+    public ParamException(Map<String, StringBuilder> errors) {
         this.errors = errors;
     }
 
-    public ParamException(String message, List<FieldError> errors) {
-        super(message);
-        this.errors = errors;
-    }
-
-    public List<FieldError> getErrors() {
+    public Map<String, StringBuilder> getErrors() {
         return errors;
     }
 }

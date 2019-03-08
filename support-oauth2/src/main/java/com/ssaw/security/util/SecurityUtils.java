@@ -1,4 +1,4 @@
-package com.ssaw.commons.security;
+package com.ssaw.security.util;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;

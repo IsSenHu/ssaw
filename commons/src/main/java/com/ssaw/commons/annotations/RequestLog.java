@@ -12,6 +12,6 @@ import java.lang.annotation.*;
 @Inherited
 @Documented
 public @interface RequestLog {
-    /** 方法 */
-    String method() default "";
+    /** 方法描述 */
+    String desc() default "";
 }

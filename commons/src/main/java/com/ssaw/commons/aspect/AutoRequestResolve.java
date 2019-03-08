@@ -4,13 +4,15 @@ import com.ssaw.commons.annotations.RequestLog;
 import com.ssaw.commons.annotations.Validating;
 import com.ssaw.commons.exceptions.ParamException;
 import com.ssaw.commons.util.json.jack.JsonUtils;
+import com.ssaw.commons.util.validate.ValidatorUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.http.HttpEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.UriComponentsBuilder;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpSession;
@@ -28,10 +31,9 @@ import java.io.Reader;
 import java.io.Writer;
 import java.security.Principal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import java.util.stream.Collectors;
+import java.util.Map;
 
 /**
  * @author HuSen.
@@ -39,6 +41,8 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Aspect
+@Component
+@SuppressWarnings("ALL")
 public class AutoRequestResolve {
 
     /**
@@ -48,10 +52,12 @@ public class AutoRequestResolve {
      */
     @Before(value = "@annotation(requestLog)", argNames = "joinPoint,requestLog")
     public void log(JoinPoint joinPoint, RequestLog requestLog) {
+        String className = joinPoint.getTarget().getClass().getName();
+        String methodName = joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
         // 过滤掉不用打印的参数
         List<Object> objects = argsFilter(args);
-        log.info("请求方法:{},参数:{}", requestLog.method(), JsonUtils.object2JsonString(objects));
+        log.info("请求方法{}.{}-方法描述:{}-参数:{}", className, methodName, requestLog.desc(), JsonUtils.object2JsonString(objects));
     }
 
     /**
@@ -62,16 +68,12 @@ public class AutoRequestResolve {
     @Before(value = "@annotation(validating)", argNames = "joinPoint,validating")
     public void validating(JoinPoint joinPoint, Validating validating) throws ParamException {
         Object[] args = joinPoint.getArgs();
+
         if(ArrayUtils.isNotEmpty(args)) {
-            List<Object> collect = Arrays.stream(args)
-                    // 过滤出BindingResult实现类的参数
-                    .filter(arg -> BindingResult.class.isAssignableFrom(arg.getClass()))
-                    .collect(Collectors.toList());
-            if(CollectionUtils.isNotEmpty(collect)) {
-                BindingResult result = (BindingResult) collect.get(0);
-                if(result.hasErrors()) {
-                    throw new ParamException(result.getFieldErrors());
-                }
+            Object arg = args[0];
+            Map<String, StringBuilder> error = ValidatorUtil.validate(arg);
+            if(MapUtils.isNotEmpty(error)) {
+                throw new ParamException(error);
             }
         }
     }

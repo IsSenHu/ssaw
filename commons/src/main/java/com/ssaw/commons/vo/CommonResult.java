@@ -10,6 +10,7 @@ import java.io.Serializable;
  */
 @Data
 public class CommonResult<T> implements Serializable {
+    private static final long serialVersionUID = -1744181168437513196L;
     /**
      * 状态码
      */

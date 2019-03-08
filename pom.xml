@@ -34,6 +34,7 @@
 		<module>support-statistical-certification-center-client</module>
 		<module>support-inner</module>
         <module>support-dubbo</module>
+        <module>support-log-collect</module>
     </modules>
 	<packaging>pom</packaging>
 
@@ -60,6 +61,7 @@
 		<common-collections.version>4.2</common-collections.version>
 		<spring-cloud-dependencies.version>Greenwich.M1</spring-cloud-dependencies.version>
 		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
+		<springfox-version>2.9.2</springfox-version>
 	</properties>
 
 	<dependencies>
@@ -124,13 +126,13 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-bean-validators</artifactId>
-			<version>2.7.0</version>
+			<version>${springfox-version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-staticdocs</artifactId>
-			<version>2.4.0</version>
+			<version>2.6.1</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

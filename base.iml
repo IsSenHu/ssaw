@@ -47,16 +47,16 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.1.0.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.springfox:springfox-bean-validators:2.7.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.springfox:springfox-bean-validators:2.9.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.google.guava:guava:20.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml:classmate:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.1.2.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.springfox:springfox-spi:2.7.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.springfox:springfox-core:2.7.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.springfox:springfox-staticdocs:2.4.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.springfox:springfox-spi:2.9.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.springfox:springfox-core:2.9.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.springfox:springfox-staticdocs:2.6.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.github.robwin:swagger2markup:0.9.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.github.robwin:markup-document-builder:0.1.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-io:commons-io:2.4" level="project" />
