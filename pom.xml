@@ -35,6 +35,7 @@
 		<module>support-inner</module>
         <module>support-dubbo</module>
         <module>support-log-collect</module>
+        <module>support-zookeeper</module>
     </modules>
 	<packaging>pom</packaging>
 

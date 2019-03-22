@@ -1,7 +1,6 @@
 package com.ssaw.commons.util.poi;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.StopWatch;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -12,7 +11,6 @@ import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.DefaultIndexedColorMap;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.awt.Color;
 import java.io.*;
@@ -20,62 +18,21 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * Created by HuSen on 2018/11/9 10:12.
+ * @author HuSen
+ * @date 2018/11/9 10:12
  */
 @SuppressWarnings("ALL")
 public class ExcelUtils {
     private static final int MAX_ROWS = 1048576;
-
-    public static List<String> read(String filePath) {
-        FileInputStream fis =null;
-        Workbook wookbook = null;
-        try {
-            fis = new FileInputStream(filePath);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            wookbook = new XSSFWorkbook(fis);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        //得到一个工作表
-        Sheet sheet = wookbook.getSheetAt(0);
-
-        //获得表头
-        Row rowHead = sheet.getRow(0);
-
-        //获得数据的总行数
-        int totalRowNum = sheet.getLastRowNum();
-
-        //要获得属性
-
-        List<String> os = new ArrayList<>();
-        //获得所有数据
-        for(int i = 1 ; i <= totalRowNum ; i++)
-        {
-            //获得第i行对象
-            Row row = sheet.getRow(i);
-
-            String orderBn = row.getCell(2).getStringCellValue();
-
-            os.add(orderBn);
-        }
-        return os;
-    }
 
     public static void export(List data, Class clazz, OutputStream outputStream, String excelName) throws IllegalAccessException, IOException {
         int totals = data.size();
@@ -153,8 +110,19 @@ public class ExcelUtils {
             cell.setCellValue(text);
             cell.setCellStyle(titleStyle);
         }
-
         // 将查询出的数据设置到sheet对应的单元格中
+        setExcelValue(data, fields, sheet, valueStyle);
+        try {
+            OutputStream outputStream = new ByteArrayOutputStream();
+            workbook.write(outputStream);
+            return parseInputStream(outputStream);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static void setExcelValue(List data, Field[] fields, SXSSFSheet sheet, CellStyle valueStyle) throws IllegalAccessException {
         int n = 0;
         for(Object object : data) {
             SXSSFRow sxssfRow = sheet.createRow(n + 2);
@@ -217,14 +185,6 @@ public class ExcelUtils {
             }
             n++;
         }
-        try {
-            OutputStream outputStream = new ByteArrayOutputStream();
-            workbook.write(outputStream);
-            return parseInputStream(outputStream);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     private static ExcelColumn getExcelColumn(Field field) {
@@ -355,28 +315,5 @@ public class ExcelUtils {
     private static ByteArrayInputStream parseInputStream(OutputStream out) {
         ByteArrayOutputStream  byteArrayOutputStream = (ByteArrayOutputStream) out;
         return new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
-    }
-
-    public static void main(String[] args) throws IOException, IllegalAccessException {
-        StopWatch stopWatch = new StopWatch();
-        stopWatch.start();
-        List<ExcelTestVo> data = new ArrayList<>();
-        for(int i = 0; i < 2000000; i++) {
-            ExcelTestVo excelTestVo = new ExcelTestVo();
-            excelTestVo.setFieldOne("列一" + (i + 1));
-            excelTestVo.setFieldTwo(i + 1);
-            excelTestVo.setFieldThree(i + 1.01);
-            excelTestVo.setFieldFour(Date.from(Instant.now()));
-            excelTestVo.setFieldFive(LocalDateTime.now());
-            excelTestVo.setFieldSix(LocalDate.now());
-            data.add(excelTestVo);
-        }
-        if(data.size() + 2 > MAX_ROWS) {
-            export(data, ExcelTestVo.class, new FileOutputStream(new File("C:\\Users\\HS\\Desktop\\桌面壁纸\\Excel.zip")), "测试Excel导出");
-        }else {
-            export(data, ExcelTestVo.class, new FileOutputStream(new File("C:\\Users\\HS\\Desktop\\Excel.xlsx")), "测试Excel导出");
-        }
-        System.out.println(stopWatch.getTime(TimeUnit.MILLISECONDS));
-        read("C:\\Users\\hszyp\\Desktop\\美团取消订单-经纬度查询.xlsx");
     }
 }
