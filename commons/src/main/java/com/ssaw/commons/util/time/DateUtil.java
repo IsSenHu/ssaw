@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author HuSen
  * @date 2019/3/22 13:29
  */
-public class DateFormatUtil {
+public class DateUtil {
 
     private static final DateTimeFormatter LOCAL_DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
