@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.ssaw.rocketmq.config.RocketMqConfiguration, \
+  com.ssaw.rocketmq.proxy.RocketMqBeanDefinitionRegistry
