@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
  * @date 2019/4/8 16:39
  */
 @Slf4j
-public class Hmacsha1Util extends BaseHmacUtil {
+public class Hmacsha1Util extends BaseUtil {
     private static final String MAC_NAME = "HmacSHA1";
 
     private static final String ENCODING = "UTF-8";

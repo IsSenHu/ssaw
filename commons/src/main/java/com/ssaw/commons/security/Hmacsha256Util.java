@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
  * @date 2019/4/8 17:05
  */
 @Slf4j
-public class Hmacsha256Util extends BaseHmacUtil {
+public class Hmacsha256Util extends BaseUtil {
 
     private static final String MAC_NAME = "HmacSHA256";
 

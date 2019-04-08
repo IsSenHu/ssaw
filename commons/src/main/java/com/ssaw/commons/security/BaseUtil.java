@@ -4,7 +4,7 @@ package com.ssaw.commons.security;
  * @author HuSen
  * @date 2019/4/8 17:32
  */
-class BaseHmacUtil {
+class BaseUtil {
 
     /**
      * 将加密后的字节数组转换成字符串
