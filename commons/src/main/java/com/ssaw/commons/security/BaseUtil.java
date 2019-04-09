@@ -7,7 +7,7 @@ package com.ssaw.commons.security;
 class BaseUtil {
 
     /**
-     * 将加密后的字节数组转换成字符串
+     * 字节数组转换成十六进制字符串
      *
      * @param bytes 字节数组
      * @return 字符串
@@ -23,5 +23,26 @@ class BaseUtil {
             hs.append(temp);
         }
         return hs.toString();
+    }
+
+    /**
+     * 十六进制字符串转为字节数组
+     *
+     * @param hexString 十六进制字符串
+     * @return 字节数组
+     */
+    static byte[] hexStringToByteArray(String hexString) {
+        final int two = 2;
+        if (hexString.length() % two != 0) {
+            throw new IllegalArgumentException();
+        }
+        char[] chars = hexString.toCharArray();
+        byte[] bytes = new byte[hexString.length() / two];
+        for (int i = 0, j = 0; i < hexString.length(); i++, j++) {
+            String swap = "" + chars[i++] + chars[i];
+            int byteInt = Integer.parseInt(swap, 16) & 0XFF;
+            bytes[j] = new Integer(byteInt).byteValue();
+        }
+        return bytes;
     }
 }
