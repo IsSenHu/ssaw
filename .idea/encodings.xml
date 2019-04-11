@@ -5,24 +5,31 @@
     <file url="file://$PROJECT_DIR$/commons" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-cassandra" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-couchbase" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support-druid" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support-dubbo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-envers" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-es" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-feign" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-geode" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-hadoop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support-inner" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-jdbc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-jdbc-extensions" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-ldap" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support-log-collect" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-mongodb" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-neo4J" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support-oauth2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-pivotal-gemFire" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-reactive-redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-rest" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-rocketmq" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-solr" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support-statistical-certification-center-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support-swagger" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/support-zookeeper" charset="UTF-8" />
   </component>
 </project>

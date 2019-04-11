@@ -2,29 +2,36 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/base.iml" filepath="$PROJECT_DIR$/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssaw-base.iml" filepath="$PROJECT_DIR$/ssaw-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-cassandra/support-cassandra.iml" filepath="$PROJECT_DIR$/support-cassandra/support-cassandra.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-couchbase/support-couchbase.iml" filepath="$PROJECT_DIR$/support-couchbase/support-couchbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-druid/support-druid.iml" filepath="$PROJECT_DIR$/support-druid/support-druid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-dubbo/support-dubbo.iml" filepath="$PROJECT_DIR$/support-dubbo/support-dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-envers/support-envers.iml" filepath="$PROJECT_DIR$/support-envers/support-envers.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-es/support-es.iml" filepath="$PROJECT_DIR$/support-es/support-es.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-feign/support-feign.iml" filepath="$PROJECT_DIR$/support-feign/support-feign.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-geode/support-geode.iml" filepath="$PROJECT_DIR$/support-geode/support-geode.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-hadoop/support-hadoop.iml" filepath="$PROJECT_DIR$/support-hadoop/support-hadoop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-inner/support-inner.iml" filepath="$PROJECT_DIR$/support-inner/support-inner.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-jdbc/support-jdbc.iml" filepath="$PROJECT_DIR$/support-jdbc/support-jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-jdbc-extensions/support-jdbc-extensions.iml" filepath="$PROJECT_DIR$/support-jdbc-extensions/support-jdbc-extensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-jpa/support-jpa.iml" filepath="$PROJECT_DIR$/support-jpa/support-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-ldap/support-ldap.iml" filepath="$PROJECT_DIR$/support-ldap/support-ldap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-log-collect/support-log-collect.iml" filepath="$PROJECT_DIR$/support-log-collect/support-log-collect.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-mongodb/support-mongodb.iml" filepath="$PROJECT_DIR$/support-mongodb/support-mongodb.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-mybatis/support-mybatis.iml" filepath="$PROJECT_DIR$/support-mybatis/support-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-neo4J/support-neo4J.iml" filepath="$PROJECT_DIR$/support-neo4J/support-neo4J.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-oauth2/support-oauth2.iml" filepath="$PROJECT_DIR$/support-oauth2/support-oauth2.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-pivotal-gemFire/support-pivotal-gemFire.iml" filepath="$PROJECT_DIR$/support-pivotal-gemFire/support-pivotal-gemFire.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-reactive-redis/support-reactive-redis.iml" filepath="$PROJECT_DIR$/support-reactive-redis/support-reactive-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-redis/support-redis.iml" filepath="$PROJECT_DIR$/support-redis/support-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-rest/support-rest.iml" filepath="$PROJECT_DIR$/support-rest/support-rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-rocketmq/support-rocketmq.iml" filepath="$PROJECT_DIR$/support-rocketmq/support-rocketmq.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-solr/support-solr.iml" filepath="$PROJECT_DIR$/support-solr/support-solr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-statistical-certification-center-client/support-statistical-certification-center-client.iml" filepath="$PROJECT_DIR$/support-statistical-certification-center-client/support-statistical-certification-center-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-swagger/support-swagger.iml" filepath="$PROJECT_DIR$/support-swagger/support-swagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-zookeeper/support-zookeeper.iml" filepath="$PROJECT_DIR$/support-zookeeper/support-zookeeper.iml" />
     </modules>
   </component>
 </project>

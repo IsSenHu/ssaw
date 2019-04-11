@@ -9,51 +9,62 @@
         <module name="commons" />
         <module name="support-cassandra" />
         <module name="support-couchbase" />
+        <module name="support-dubbo" />
         <module name="support-envers" />
         <module name="support-es" />
         <module name="support-feign" />
         <module name="support-geode" />
         <module name="support-hadoop" />
-        <module name="support-jdbc" />
+        <module name="support-inner" />
         <module name="support-jdbc-extensions" />
         <module name="support-jpa" />
         <module name="support-ldap" />
+        <module name="support-log-collect" />
         <module name="support-mongodb" />
-        <module name="support-mybatis" />
         <module name="support-neo4J" />
+        <module name="support-oauth2" />
         <module name="support-pivotal-gemFire" />
         <module name="support-reactive-redis" />
         <module name="support-redis" />
         <module name="support-rest" />
         <module name="support-rocketmq" />
         <module name="support-solr" />
+        <module name="support-statistical-certification-center-client" />
         <module name="support-swagger" />
+        <module name="support-zookeeper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="base" target="1.8" />
       <module name="commons" target="1.8" />
+      <module name="ssaw-base" target="1.8" />
       <module name="support-cassandra" target="1.8" />
       <module name="support-couchbase" target="1.8" />
+      <module name="support-druid" target="1.8" />
+      <module name="support-dubbo" target="1.8" />
       <module name="support-envers" target="1.8" />
       <module name="support-es" target="1.8" />
       <module name="support-feign" target="1.8" />
       <module name="support-geode" target="1.8" />
       <module name="support-hadoop" target="1.8" />
+      <module name="support-inner" target="1.8" />
       <module name="support-jdbc" target="1.8" />
       <module name="support-jdbc-extensions" target="1.8" />
       <module name="support-jpa" target="1.8" />
       <module name="support-ldap" target="1.8" />
+      <module name="support-log-collect" target="1.8" />
       <module name="support-mongodb" target="1.8" />
       <module name="support-mybatis" target="1.8" />
       <module name="support-neo4J" target="1.8" />
+      <module name="support-oauth2" target="1.8" />
       <module name="support-pivotal-gemFire" target="1.8" />
       <module name="support-reactive-redis" target="1.8" />
       <module name="support-redis" target="1.8" />
       <module name="support-rest" target="1.8" />
       <module name="support-rocketmq" target="1.8" />
       <module name="support-solr" target="1.8" />
+      <module name="support-statistical-certification-center-client" target="1.8" />
       <module name="support-swagger" target="1.8" />
+      <module name="support-zookeeper" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
