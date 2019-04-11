@@ -11,5 +11,5 @@ public interface WatchListener {
      * 监听得到变化的数据
      * @param data 数据
      */
-    void listen(byte[] data);
+    void listen(byte[] data) throws Exception;
 }

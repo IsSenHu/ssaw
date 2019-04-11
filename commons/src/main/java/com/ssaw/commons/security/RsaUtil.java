@@ -8,8 +8,6 @@ import java.nio.charset.Charset;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import java.time.Instant;
-import java.util.Date;
 
 /**
  * @author HuSen
@@ -25,14 +23,15 @@ public class RsaUtil extends BaseUtil {
     /**
      * 生成私钥 公钥
      *
+     * @param key            初始化密码
      * @param publicKeyPath  公钥保存路径
      * @param privateKeyPath 私钥保存路径
      */
-    public static void generate(String publicKeyPath, String privateKeyPath) {
+    public static void generate(String key, String publicKeyPath, String privateKeyPath) {
         KeyPairGenerator keyPairGenerator;
         try {
             keyPairGenerator = KeyPairGenerator.getInstance(RSA_NAME);
-            SecureRandom secureRandom = new SecureRandom(Date.from(Instant.now()).toString().getBytes());
+            SecureRandom secureRandom = new SecureRandom(key.getBytes(Charset.forName(ENCODING)));
             keyPairGenerator.initialize(1024, secureRandom);
             KeyPair keyPair = keyPairGenerator.genKeyPair();
             byte[] publicKeyBytes = keyPair.getPublic().getEncoded();
@@ -138,5 +137,9 @@ public class RsaUtil extends BaseUtil {
             log.error("RSA decrypt fail:", e);
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        generate("19960621Sly", "F:\\public.key", "F:\\private.key");
     }
 }

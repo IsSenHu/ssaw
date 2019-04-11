@@ -25,7 +25,7 @@ public class CuratorConnectFactory {
                 }
             }
         }
-        return curatorFramework;
+        return CURATOR_FRAMEWORK_MAP.get(namespace);
     }
 
     public static void close(String namespace) {

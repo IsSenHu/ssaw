@@ -10,7 +10,7 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
  */
 public class CuratorConnect {
     /** zk地址，集群模式则是多个ip */
-    private static final String ZK_SERVER_IPS = "10.201.2.203:2181";
+    private static final String ZK_SERVER_IPS = "118.24.38.46:2181";
 
     public CuratorFrameworkFactory.Builder baseBuild() {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 5);
