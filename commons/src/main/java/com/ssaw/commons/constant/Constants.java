@@ -34,5 +34,10 @@ public class Constants {
          * 数据已存在
          */
         public static final int DATA_EXIST = 5003;
+
+        /**
+         * 禁止
+         */
+        public static final int FORBIDDEN = 403;
     }
 }

@@ -37,8 +37,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 @SuppressWarnings("all")
 public final class HttpConnectionUtils {
-    private static final int REQ_TIME_OUT = 30000;
-    private static final int CON_TIME_OUT = 30000;
+    private static final int REQ_TIME_OUT = 120000;
+    private static final int CON_TIME_OUT = 120000;
     private static final RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(REQ_TIME_OUT).setConnectTimeout(CON_TIME_OUT).build();
     private static final String DEFAULT_CHARSET = "utf-8";
     private static final int DEFAULT_REPEAT_TIMES = 3;

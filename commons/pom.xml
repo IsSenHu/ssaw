@@ -47,14 +47,6 @@
             <artifactId>fastjson</artifactId>
         </dependency>
 
-        <!-- support redis -->
-        <dependency>
-            <groupId>com.ssaw</groupId>
-            <artifactId>support-redis</artifactId>
-            <version>${support-redis.version}</version>
-            <type>pom</type>
-        </dependency>
-
         <!-- feign -->
         <dependency>
             <groupId>io.github.openfeign</groupId>
