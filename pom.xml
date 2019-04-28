@@ -36,6 +36,7 @@
         <module>support-dubbo</module>
         <module>support-log-collect</module>
         <module>support-zookeeper</module>
+        <module>support-uaa</module>
     </modules>
 	<packaging>pom</packaging>
 
@@ -60,7 +61,7 @@
 		<spring.boot.version>2.1.0.RELEASE</spring.boot.version>
 		<fastjson.version>1.2.47</fastjson.version>
 		<common-collections.version>4.2</common-collections.version>
-		<spring-cloud-dependencies.version>Greenwich.M1</spring-cloud-dependencies.version>
+		<spring-cloud-dependencies.version>Greenwich.M2</spring-cloud-dependencies.version>
 		<druid-spring-boot-starter.version>1.1.10</druid-spring-boot-starter.version>
 		<springfox-version>2.9.2</springfox-version>
 	</properties>
@@ -198,20 +199,6 @@
 						<target>1.8</target>
 						<encoding>UTF-8</encoding>
 					</configuration>
-				</plugin>
-				<!-- Source -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>3.0.1</version>
-					<executions>
-						<execution>
-							<phase>package</phase>
-							<goals>
-								<goal>jar-no-fork</goal>
-							</goals>
-						</execution>
-					</executions>
 				</plugin>
 				<!-- Javadoc -->
 				<plugin>
