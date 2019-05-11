@@ -39,50 +39,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-909942585">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="163" />
-          <entry key="xml" value="18" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="163" />
-          <entry key="XML" value="18" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="15" />
-          <entry key="xml" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="15" />
-          <entry key="XML" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/support-redis/src/main/java/demo/Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="400">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,14 +89,9 @@
         <option value="$PROJECT_DIR$/support-redis/pom.xml" />
         <option value="$PROJECT_DIR$/support-rocketmq/src/main/java/com/ssaw/rocketmq/proxy/RocketMqBeanDefinitionRegistry.java" />
         <option value="$PROJECT_DIR$/support-redis/src/main/java/demo/Demo.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fbec6a8f-0473-4bfd-a56b-6246764b1789/console.sql" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -150,8 +125,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -163,58 +136,26 @@
             <path>
               <item name="ssaw-base" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssaw-base" type="462c0819:PsiDirectoryNode" />
-              <item name="support-redis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssaw-base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssaw-base" type="462c0819:PsiDirectoryNode" />
-              <item name="support-redis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssaw-base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssaw-base" type="462c0819:PsiDirectoryNode" />
-              <item name="support-redis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssaw-base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssaw-base" type="462c0819:PsiDirectoryNode" />
-              <item name="support-redis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssaw-base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssaw-base" type="462c0819:PsiDirectoryNode" />
-              <item name="support-redis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssaw-base" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssaw-base" type="462c0819:PsiDirectoryNode" />
               <item name="support-zookeeper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554997470762" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555085241897" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="F:/1919" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -255,12 +196,14 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -291,30 +234,36 @@
       <workItem from="1546607784572" duration="554000" />
       <workItem from="1548333134496" duration="10000" />
       <workItem from="1554986529642" duration="128000" />
-      <workItem from="1554986661341" duration="2714000" />
+      <workItem from="1554986661341" duration="2796000" />
+      <workItem from="1555084114373" duration="1017000" />
+      <workItem from="1555085143600" duration="26000" />
+      <workItem from="1555085194406" duration="64000" />
+      <workItem from="1555085472527" duration="387000" />
+      <workItem from="1557546751907" duration="454000" />
+      <workItem from="1557556127870" duration="11087000" />
+      <workItem from="1557569410692" duration="971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10052000" />
+    <option name="totallyTimeSpent" value="24140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13272922" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1924307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="6" />
-      <window_info id="Learn" order="7" />
+      <window_info id="Learn" order="7" weight="0.32995737" />
       <window_info id="Web" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32832617" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32832617" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -322,29 +271,30 @@
       <window_info anchor="bottom" id="MyBatis Sql Log" order="7" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3293348" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3279743" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Tail" order="13" />
       <window_info anchor="bottom" id="SonarLint" order="14" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
+      <window_info anchor="bottom" id="Messages" order="16" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="17" visible="true" weight="0.32939914" />
+      <window_info anchor="bottom" id="Docker" order="18" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32995737" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.09754797" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Maven" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -471,10 +421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -496,9 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -541,16 +484,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fbec6a8f-0473-4bfd-a56b-6246764b1789/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/support-redis/src/main/java/demo/Demo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state relative-caret-position="400">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
