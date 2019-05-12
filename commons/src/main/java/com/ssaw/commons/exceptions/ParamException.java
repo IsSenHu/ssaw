@@ -8,6 +8,8 @@ import java.util.Map;
  * @date 2018/11/28 16:32.
  */
 public class ParamException extends RuntimeException {
+    private static final long serialVersionUID = -878270520763922880L;
+
     private Map<String, StringBuilder> errors;
 
     public ParamException(Map<String, StringBuilder> errors) {

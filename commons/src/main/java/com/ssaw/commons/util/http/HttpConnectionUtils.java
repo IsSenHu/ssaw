@@ -37,8 +37,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 @SuppressWarnings("all")
 public final class HttpConnectionUtils {
-    private static final int REQ_TIME_OUT = 30000;
-    private static final int CON_TIME_OUT = 30000;
+    private static final int REQ_TIME_OUT = 120000;
+    private static final int CON_TIME_OUT = 120000;
     private static final RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(REQ_TIME_OUT).setConnectTimeout(CON_TIME_OUT).build();
     private static final String DEFAULT_CHARSET = "utf-8";
     private static final int DEFAULT_REPEAT_TIMES = 3;
@@ -74,7 +74,9 @@ public final class HttpConnectionUtils {
             AtomicInteger integer = new AtomicInteger(0);
 
             while(repeatTime != integer.get()) {
-                log.info("正在重试第[{}]次", integer.incrementAndGet());
+                if (log.isDebugEnabled()) {
+                    log.debug("正在重试第[{}]次", integer.incrementAndGet());
+                }
                 returnDatas = doPostByRequestBody((CloseableHttpClient)null, httpUrl, requestBody, isRepeat, ContentType.APPLICATION_JSON, header);
                 if(StringUtils.equals(returnDatas, "Dds12312weqweq1412qwe1") || StringUtils.isNotBlank(returnDatas)) {
                     break;
@@ -91,7 +93,9 @@ public final class HttpConnectionUtils {
             AtomicInteger integer = new AtomicInteger(0);
 
             while(repeatTime != integer.get()) {
-                log.info("正在重试第[{}]次", integer.incrementAndGet());
+                if (log.isDebugEnabled()) {
+                    log.debug("正在重试第[{}]次", integer.incrementAndGet());
+                }
                 returnDatas = doPostByRequestBody((CloseableHttpClient)null, httpUrl, requestBody, isRepeat, contentType, header);
                 if(StringUtils.equals(returnDatas, "Dds12312weqweq1412qwe1") || StringUtils.isNotBlank(returnDatas)) {
                     break;
@@ -123,7 +127,9 @@ public final class HttpConnectionUtils {
             respEntity = response.getEntity();
             if(respEntity != null) {
                 returnData = EntityUtils.toString(respEntity, "utf-8");
-                log.info("HTTP 请求 Response == > {}", returnData);
+                if (log.isDebugEnabled()) {
+                    log.info("HTTP 请求 Response == > {}", returnData);
+                }
                 if(response.getStatusLine().getStatusCode() >= 200 && response.getStatusLine().getStatusCode() < 300) {
                     if(StringUtils.isBlank(returnData)) {
                         returnData = "Dds12312weqweq1412qwe1";
@@ -157,7 +163,9 @@ public final class HttpConnectionUtils {
             AtomicInteger integer = new AtomicInteger(0);
 
             while(repeatTime != integer.get()) {
-                log.info("正在重试第[{}]次", integer.incrementAndGet());
+                if (log.isDebugEnabled()) {
+                    log.debug("正在重试第[{}]次", integer.incrementAndGet());
+                }
                 returnDatas = doPostHttpRequet(httpClient, httpUrl, parameters, header);
                 if(StringUtils.equals(returnDatas, "Dds12312weqweq1412qwe1") || StringUtils.isNotBlank(returnDatas)) {
                     break;
@@ -198,7 +206,9 @@ public final class HttpConnectionUtils {
             HttpEntity respEntity = response.getEntity();
             if(respEntity != null) {
                 returnData = EntityUtils.toString(respEntity, "utf-8");
-                log.info("HTTP 请求 Response == > {}", returnData);
+                if (log.isDebugEnabled()) {
+                    log.info("HTTP 请求 Response == > {}", returnData);
+                }
                 if(response.getStatusLine().getStatusCode() >= 200 && response.getStatusLine().getStatusCode() < 300) {
                     if(StringUtils.isBlank(returnData)) {
                         returnData = "Dds12312weqweq1412qwe1";
@@ -330,7 +340,9 @@ public final class HttpConnectionUtils {
             AtomicInteger integer = new AtomicInteger(0);
 
             while(repeatTime != integer.get()) {
-                log.info("正在重试第[{}]次", integer.incrementAndGet());
+                if (log.isDebugEnabled()) {
+                    log.info("正在重试第[{}]次", integer.incrementAndGet());
+                }
                 returnDatas = httpGetConnection(httpUrl, true, headers);
                 if(StringUtils.equals(returnDatas, "Dds12312weqweq1412qwe1") || StringUtils.isNotBlank(returnDatas)) {
                     break;
@@ -370,7 +382,9 @@ public final class HttpConnectionUtils {
             respEntity = responsere.getEntity();
             if(respEntity != null) {
                 returnData = EntityUtils.toString(respEntity, "utf-8");
-                log.info("HTTP 请求 Response == > {}", returnData);
+                if (log.isDebugEnabled()) {
+                    log.info("HTTP 请求 Response == > {}", returnData);
+                }
                 if(responsere.getStatusLine().getStatusCode() >= 200 && responsere.getStatusLine().getStatusCode() < 300) {
                     if(StringUtils.isBlank(returnData)) {
                         returnData = "Dds12312weqweq1412qwe1";
