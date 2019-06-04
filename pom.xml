@@ -5,38 +5,23 @@
 
 	<groupId>com.ssaw</groupId>
 	<artifactId>base</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
+
 	<modules>
 		<module>commons</module>
 		<module>support-feign</module>
 		<module>support-jpa</module>
 		<module>support-mybatis</module>
 		<module>support-redis</module>
-		<module>support-es</module>
-		<module>support-mongodb</module>
 		<module>support-rocketmq</module>
 		<module>support-swagger</module>
 		<module>support-jdbc</module>
-		<module>support-jdbc-extensions</module>
-		<module>support-ldap</module>
-		<module>support-reactive-redis</module>
-		<module>support-rest</module>
-		<module>support-cassandra</module>
-		<module>support-geode</module>
-		<module>support-solr</module>
-		<module>support-pivotal-gemFire</module>
-		<module>support-couchbase</module>
-		<module>support-envers</module>
-		<module>support-neo4J</module>
-		<module>support-hadoop</module>
 		<module>support-druid</module>
 		<module>support-oauth2</module>
-		<module>support-statistical-certification-center-client</module>
 		<module>support-inner</module>
         <module>support-dubbo</module>
         <module>support-log-collect</module>
         <module>support-zookeeper</module>
-        <module>support-uaa</module>
     </modules>
 	<packaging>pom</packaging>
 
@@ -217,4 +202,32 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+	<repositories>
+		<!-- 配置nexus远程仓库 -->
+		<repository>
+			<id>nexus</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://192.168.0.103:16386/repository/maven-public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>Releases</name>
+			<url>http://192.168.0.103:16386/repository/maven-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>Snapshot</name>
+			<url>http://192.168.0.103:16386/repository/maven-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>

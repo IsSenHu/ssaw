@@ -142,7 +142,7 @@ public class RocketMqProxy implements InvocationHandler {
                 return null;
             }
         } catch (Exception e) {
-            log.error("send message fail : {}-fail:", e);
+            log.error("send message fail : {}-fail:", msg, e);
         }
         return null;
     }

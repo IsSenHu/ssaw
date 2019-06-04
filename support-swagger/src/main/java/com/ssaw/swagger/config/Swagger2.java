@@ -40,7 +40,7 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ssaw.swaggerdemo"))
+                .apis(RequestHandlerSelectors.basePackage(swaggerProperties.getBasePackages()))
                 .paths(PathSelectors.any())
                 .build().groupName("SSAW");
     }

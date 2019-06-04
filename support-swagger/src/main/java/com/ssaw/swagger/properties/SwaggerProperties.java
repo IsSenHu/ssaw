@@ -14,7 +14,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class SwaggerProperties {
 
     /** 扫描指定包下的swagger注解 */
-    private String[] basePackages = {};
+    private String basePackages = "";
 
     /** 组名 */
     private String groupName = "default";

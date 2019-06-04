@@ -7,13 +7,13 @@
     <parent>
         <artifactId>base</artifactId>
         <groupId>com.ssaw</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>support-rocketmq</artifactId>
     <name>support-rocketmq</name>
-    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <version>1.0.0</version>
 
     <dependencies>
         <!-- rocket mq 支持 -->
@@ -41,4 +41,32 @@
             <version>4.4.0</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <!-- 配置nexus远程仓库 -->
+        <repository>
+            <id>nexus</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.0.103:16386/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Releases</name>
+            <url>http://192.168.0.103:16386/repository/maven-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Snapshot</name>
+            <url>http://192.168.0.103:16386/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
