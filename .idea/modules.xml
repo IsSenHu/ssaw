@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/ssaw-base.iml" filepath="$PROJECT_DIR$/ssaw-base.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-cassandra/support-cassandra.iml" filepath="$PROJECT_DIR$/support-cassandra/support-cassandra.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-couchbase/support-couchbase.iml" filepath="$PROJECT_DIR$/support-couchbase/support-couchbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-disruptor/support-disruptor.iml" filepath="$PROJECT_DIR$/support-disruptor/support-disruptor.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-druid/support-druid.iml" filepath="$PROJECT_DIR$/support-druid/support-druid.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-dubbo/support-dubbo.iml" filepath="$PROJECT_DIR$/support-dubbo/support-dubbo.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-envers/support-envers.iml" filepath="$PROJECT_DIR$/support-envers/support-envers.iml" />

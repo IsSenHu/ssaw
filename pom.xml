@@ -24,7 +24,8 @@
         <module>support-zookeeper</module>
         <module>support-netty</module>
 		<module>support-zeromq</module>
-	</modules>
+        <module>support-disruptor</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>base</name>

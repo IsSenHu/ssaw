@@ -6,35 +6,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="support-log-collect" />
-        <module name="support-ldap" />
-        <module name="support-couchbase" />
-        <module name="support-statistical-certification-center-client" />
-        <module name="support-cassandra" />
-        <module name="support-pivotal-gemFire" />
-        <module name="support-jpa" />
-        <module name="support-uaa" />
-        <module name="support-solr" />
-        <module name="support-zookeeper" />
         <module name="support-reactive-redis" />
-        <module name="support-oauth2" />
+        <module name="support-statistical-certification-center-client" />
+        <module name="support-jdbc-extensions" />
+        <module name="support-zookeeper" />
+        <module name="support-netty" />
+        <module name="support-disruptor" />
         <module name="support-envers" />
-        <module name="support-dubbo" />
-        <module name="support-redis" />
+        <module name="support-ldap" />
         <module name="support-zeromq" />
         <module name="support-feign" />
-        <module name="support-geode" />
-        <module name="support-swagger" />
-        <module name="support-hadoop" />
-        <module name="support-neo4J" />
-        <module name="commons" />
-        <module name="support-es" />
-        <module name="support-jdbc-extensions" />
-        <module name="support-inner" />
-        <module name="support-mongodb" />
-        <module name="support-rocketmq" />
-        <module name="support-netty" />
         <module name="support-rest" />
+        <module name="support-rocketmq" />
+        <module name="support-solr" />
+        <module name="support-geode" />
+        <module name="support-log-collect" />
+        <module name="support-mongodb" />
+        <module name="support-oauth2" />
+        <module name="support-es" />
+        <module name="support-redis" />
+        <module name="support-neo4J" />
+        <module name="support-cassandra" />
+        <module name="support-dubbo" />
+        <module name="support-swagger" />
+        <module name="support-couchbase" />
+        <module name="support-hadoop" />
+        <module name="commons" />
+        <module name="support-inner" />
+        <module name="support-jpa" />
+        <module name="support-pivotal-gemFire" />
+        <module name="support-uaa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -43,6 +44,7 @@
       <module name="ssaw-base" target="1.8" />
       <module name="support-cassandra" target="1.8" />
       <module name="support-couchbase" target="1.8" />
+      <module name="support-disruptor" target="1.8" />
       <module name="support-druid" target="1.8" />
       <module name="support-dubbo" target="1.8" />
       <module name="support-envers" target="1.8" />
@@ -79,6 +81,7 @@
       <module name="commons" options="-parameters" />
       <module name="support-cassandra" options="-parameters" />
       <module name="support-couchbase" options="-parameters" />
+      <module name="support-disruptor" options="-parameters" />
       <module name="support-dubbo" options="-parameters" />
       <module name="support-envers" options="-parameters" />
       <module name="support-es" options="-parameters" />
