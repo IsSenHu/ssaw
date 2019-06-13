@@ -15,6 +15,7 @@
         <module name="support-jpa" />
         <module name="support-neo4J" />
         <module name="support-zookeeper" />
+        <module name="support-netty" />
         <module name="support-envers" />
         <module name="support-dubbo" />
         <module name="support-inner" />
@@ -57,6 +58,7 @@
       <module name="support-mongodb" target="1.8" />
       <module name="support-mybatis" target="1.8" />
       <module name="support-neo4J" target="1.8" />
+      <module name="support-netty" target="1.8" />
       <module name="support-oauth2" target="1.8" />
       <module name="support-pivotal-gemFire" target="1.8" />
       <module name="support-reactive-redis" target="1.8" />
@@ -88,6 +90,7 @@
       <module name="support-log-collect" options="-parameters" />
       <module name="support-mongodb" options="-parameters" />
       <module name="support-neo4J" options="-parameters" />
+      <module name="support-netty" options="-parameters" />
       <module name="support-oauth2" options="-parameters" />
       <module name="support-pivotal-gemFire" options="-parameters" />
       <module name="support-reactive-redis" options="-parameters" />

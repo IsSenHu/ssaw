@@ -23,6 +23,7 @@
       <module fileurl="file://$PROJECT_DIR$/support-mongodb/support-mongodb.iml" filepath="$PROJECT_DIR$/support-mongodb/support-mongodb.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-mybatis/support-mybatis.iml" filepath="$PROJECT_DIR$/support-mybatis/support-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-neo4J/support-neo4J.iml" filepath="$PROJECT_DIR$/support-neo4J/support-neo4J.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-netty/support-netty.iml" filepath="$PROJECT_DIR$/support-netty/support-netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-oauth2/support-oauth2.iml" filepath="$PROJECT_DIR$/support-oauth2/support-oauth2.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-pivotal-gemFire/support-pivotal-gemFire.iml" filepath="$PROJECT_DIR$/support-pivotal-gemFire/support-pivotal-gemFire.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-reactive-redis/support-reactive-redis.iml" filepath="$PROJECT_DIR$/support-reactive-redis/support-reactive-redis.iml" />
