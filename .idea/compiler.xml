@@ -8,14 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="support-ldap" />
         <module name="support-couchbase" />
-        <module name="support-rest" />
+        <module name="support-uaa" />
         <module name="support-cassandra" />
         <module name="commons" />
         <module name="support-pivotal-gemFire" />
         <module name="support-jpa" />
-        <module name="support-uaa" />
+        <module name="support-neo4J" />
         <module name="support-zookeeper" />
-        <module name="support-swagger" />
         <module name="support-envers" />
         <module name="support-dubbo" />
         <module name="support-inner" />
@@ -24,18 +23,20 @@
         <module name="support-geode" />
         <module name="support-es" />
         <module name="support-hadoop" />
-        <module name="support-neo4J" />
-        <module name="support-oauth2" />
         <module name="support-redis" />
+        <module name="support-oauth2" />
         <module name="support-jdbc-extensions" />
-        <module name="support-log-collect" />
         <module name="support-mongodb" />
+        <module name="support-rest" />
+        <module name="support-log-collect" />
+        <module name="support-swagger" />
         <module name="support-rocketmq" />
         <module name="support-solr" />
         <module name="support-reactive-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="base" target="1.8" />
       <module name="commons" target="1.8" />
       <module name="ssaw-base" target="1.8" />
       <module name="support-cassandra" target="1.8" />

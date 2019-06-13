@@ -65,12 +65,12 @@
         <repository>
             <id>nexus</id>
             <name>Releases</name>
-            <url>http://192.168.0.103:16386/repository/maven-releases</url>
+            <url>http://nexus.ngrok.xiaomiqiu.cn/repository/maven-releases</url>
         </repository>
         <snapshotRepository>
             <id>nexus</id>
             <name>Snapshot</name>
-            <url>http://192.168.0.103:16386/repository/maven-snapshots</url>
+            <url>http://nexus.ngrok.xiaomiqiu.cn/repository/maven-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
