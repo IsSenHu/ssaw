@@ -65,7 +65,7 @@
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.9.3" level="project" />
     <orderEntry type="library" name="Maven: org.jodd:jodd-bean:5.0.10" level="project" />
     <orderEntry type="library" name="Maven: org.jodd:jodd-core:5.0.10" level="project" />
-    <orderEntry type="module" module-name="commons" />
+    <orderEntry type="library" name="Maven: com.ssaw:commons:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-json:2.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.7" level="project" />

@@ -23,7 +23,8 @@
         <module>support-log-collect</module>
         <module>support-zookeeper</module>
         <module>support-netty</module>
-    </modules>
+		<module>support-zeromq</module>
+	</modules>
 	<packaging>pom</packaging>
 
 	<name>base</name>

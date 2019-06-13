@@ -34,6 +34,7 @@
       <module fileurl="file://$PROJECT_DIR$/support-statistical-certification-center-client/support-statistical-certification-center-client.iml" filepath="$PROJECT_DIR$/support-statistical-certification-center-client/support-statistical-certification-center-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-swagger/support-swagger.iml" filepath="$PROJECT_DIR$/support-swagger/support-swagger.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-uaa/support-uaa.iml" filepath="$PROJECT_DIR$/support-uaa/support-uaa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/support-zeromq/support-zeromq.iml" filepath="$PROJECT_DIR$/support-zeromq/support-zeromq.iml" />
       <module fileurl="file://$PROJECT_DIR$/support-zookeeper/support-zookeeper.iml" filepath="$PROJECT_DIR$/support-zookeeper/support-zookeeper.iml" />
     </modules>
   </component>
