@@ -25,6 +25,7 @@
         <module>support-netty</module>
 		<module>support-zeromq</module>
         <module>support-disruptor</module>
+        <module>support-behavior-tree</module>
     </modules>
 	<packaging>pom</packaging>
 

@@ -28,6 +28,7 @@
         <module name="support-neo4J" />
         <module name="support-cassandra" />
         <module name="support-dubbo" />
+        <module name="support-behavior-tree" />
         <module name="support-swagger" />
         <module name="support-couchbase" />
         <module name="support-hadoop" />
@@ -42,6 +43,7 @@
       <module name="base" target="1.8" />
       <module name="commons" target="1.8" />
       <module name="ssaw-base" target="1.8" />
+      <module name="support-behavior-tree" target="1.8" />
       <module name="support-cassandra" target="1.8" />
       <module name="support-couchbase" target="1.8" />
       <module name="support-disruptor" target="1.8" />
@@ -79,6 +81,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="commons" options="-parameters" />
+      <module name="support-behavior-tree" options="-parameters" />
       <module name="support-cassandra" options="-parameters" />
       <module name="support-couchbase" options="-parameters" />
       <module name="support-disruptor" options="-parameters" />
