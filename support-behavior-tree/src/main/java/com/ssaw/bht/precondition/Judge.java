@@ -12,8 +12,8 @@ public interface Judge {
     /**
      *  是否满足
      *
-     * @param preConditions 前提
+     * @param isTrues 前提
      * @return 是否满足
      */
-    boolean satisfy(PreCondition... preConditions);
+    boolean satisfy(IsTrue... isTrues);
 }

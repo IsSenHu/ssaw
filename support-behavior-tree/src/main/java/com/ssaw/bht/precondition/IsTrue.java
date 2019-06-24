@@ -6,7 +6,7 @@ package com.ssaw.bht.precondition;
  * @author HuSen
  * create on 2019/6/21 14:25
  */
-public interface PreCondition {
+public interface IsTrue {
 
     /**
      * 是否满足

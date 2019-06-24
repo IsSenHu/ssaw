@@ -2,6 +2,7 @@ package com.ssaw.bht.node;
 
 
 import com.ssaw.bht.cons.EStatus;
+import com.ssaw.bht.precondition.PreConditionType;
 
 import java.util.List;
 
@@ -37,4 +38,6 @@ public interface Node {
     void onTerminate(EStatus status);
 
     List<Node> children();
+
+    PreConditionType pre();
 }
