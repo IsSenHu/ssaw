@@ -1,10 +1,10 @@
-package com.ssaw.netty.echo.room;
+package com.ssaw.netty.echo.room.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
-import io.netty.handler.codec.http.websocketx.WebSocketClientProtocolHandler;
+import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 
 /**
  * @author HuSen
@@ -20,7 +20,7 @@ public class TextWebSocketFrameHandler extends SimpleChannelInboundHandler<TextW
 
 	@Override
 	public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-		if (evt == WebSocketClientProtocolHandler.ClientHandshakeStateEvent.HANDSHAKE_COMPLETE) {
+		if (((WebSocketServerProtocolHandler.ServerHandshakeStateEvent) evt).name().equals("HANDSHAKE_COMPLETE")) {
 			ctx.pipeline().remove(HttpRequestHandler.class);
 			group.writeAndFlush(new TextWebSocketFrame("Client " + ctx.channel() + "joined"));
 			group.add(ctx.channel());

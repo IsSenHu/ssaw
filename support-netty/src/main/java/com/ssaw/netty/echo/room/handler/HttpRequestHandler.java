@@ -1,4 +1,4 @@
-package com.ssaw.netty.echo.room;
+package com.ssaw.netty.echo.room.handler;
 
 import io.netty.channel.*;
 import io.netty.handler.codec.http.*;
@@ -47,7 +47,7 @@ public class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpRequ
 			}
 			RandomAccessFile file = new RandomAccessFile(INDEX, "r");
 			HttpResponse response = new DefaultHttpResponse(request.protocolVersion(), HttpResponseStatus.OK);
-			response.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/plain; charset=UTF-8");
+			response.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/html; charset=UTF-8");
 			boolean keepAlive = HttpUtil.isKeepAlive(request);
 			if (keepAlive) {
 				response.headers().set(HttpHeaderNames.CONTENT_LENGTH, file.length());
