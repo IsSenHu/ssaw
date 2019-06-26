@@ -18,7 +18,6 @@
 		<module>support-jdbc</module>
 		<module>support-druid</module>
 		<module>support-oauth2</module>
-		<module>support-inner</module>
         <module>support-dubbo</module>
         <module>support-log-collect</module>
         <module>support-zookeeper</module>
@@ -26,6 +25,8 @@
 		<module>support-zeromq</module>
         <module>support-disruptor</module>
         <module>support-behavior-tree</module>
+        <module>support-jetty</module>
+        <module>support-asm</module>
     </modules>
 	<packaging>pom</packaging>
 

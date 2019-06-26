@@ -48,7 +48,6 @@
             <groupId>com.ssaw</groupId>
             <artifactId>support-oauth2</artifactId>
             <version>${support-oauth2.version}</version>
-            <type>pom</type>
         </dependency>
 
         <!-- support redis -->
