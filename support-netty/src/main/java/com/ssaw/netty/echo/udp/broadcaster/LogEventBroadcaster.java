@@ -46,7 +46,7 @@ public class LogEventBroadcaster {
                 // 设置当前文件的指针，以确保没有任何的旧日志被发送
                 String line;
                 while ((line = raf.readLine()) != null) {
-                    ch.writeAndFlush(new LogEvent(null, file.getAbsolutePath(), line, -1L));
+                    ch.writeAndFlush(new LogEvent(file.getAbsolutePath(), line));
                 }
                 // 存储其在文件中的当前位置
                 pointer = raf.getFilePointer();

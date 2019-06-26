@@ -2,7 +2,6 @@ package com.ssaw.netty.echo.udp.encoder;
 
 import com.ssaw.netty.echo.udp.pojo.LogEvent;
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufAllocator;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.handler.codec.MessageToMessageEncoder;
