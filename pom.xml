@@ -27,6 +27,7 @@
         <module>support-behavior-tree</module>
         <module>support-jetty</module>
         <module>support-asm</module>
+        <module>support-gateway</module>
     </modules>
 	<packaging>pom</packaging>
 

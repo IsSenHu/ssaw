@@ -8,6 +8,6 @@ import com.ssaw.netty.echo.core.EchoClient;
  */
 public class Client {
     public static void main(String[] args) throws InterruptedException {
-        new EchoClient("localhost", 12001).start();
+        new EchoClient("localhost", 20007).start();
     }
 }

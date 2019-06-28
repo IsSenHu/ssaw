@@ -2,9 +2,11 @@ package com.ssaw.netty.echo.core;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.CharsetUtil;
@@ -28,7 +30,6 @@ public class EchoServer {
     }
 
     public void start() {
-        final EchoServerHandler serverHandler = new EchoServerHandler();
         try {
             // 创建ServerBootstrap
             ServerBootstrap b = new ServerBootstrap();
@@ -38,22 +39,37 @@ public class EchoServer {
                     // 使用指定的端口，设置套接字地址
                     .localAddress(new InetSocketAddress(port))
                     // 添加EchoServerHandler到ChannelPipeline
+                    .childOption(ChannelOption.SO_KEEPALIVE, true)
                     .childHandler(new SimpleChannelInboundHandler<ByteBuffer>() {
                         ChannelFuture connectFuture;
                         @Override
                         public void channelActive(ChannelHandlerContext ctx) {
                             Bootstrap bootstrap = new Bootstrap();
                             bootstrap.channel(NioSocketChannel.class)
-                                    .handler(new SimpleChannelInboundHandler<ByteBuffer>() {
-                                        @Override
-                                        public void channelActive(ChannelHandlerContext ctx) {
-                                            ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks!", CharsetUtil.UTF_8));
-                                        }
+                                    .option(ChannelOption.SO_KEEPALIVE, true)
+                                    .handler(new ChannelInitializer<SocketChannel>() {
 
                                         @Override
-                                        protected void channelRead0(ChannelHandlerContext ctx, ByteBuffer msg) {
-                                            System.out.println("Received data");
-                                            ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks!", CharsetUtil.UTF_8));
+                                        protected void initChannel(SocketChannel ch) {
+                                            ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
+                                                @Override
+                                                public void channelActive(ChannelHandlerContext ctx) {
+                                                    log.info("链接已建立...");
+                                                    ByteBuf buffer = ctx.alloc().buffer();
+                                                    buffer.writeCharSequence("1001", CharsetUtil.UTF_8);
+                                                    ctx.writeAndFlush(buffer.retain());
+                                                }
+
+                                                @Override
+                                                public void channelRead(ChannelHandlerContext ctx, Object msg) {
+                                                    System.out.println("Received data");
+                                                }
+
+                                                @Override
+                                                public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+                                                    cause.printStackTrace();
+                                                }
+                                            });
                                         }
                                     });
                             bootstrap.group(ctx.channel().eventLoop());
@@ -64,7 +80,10 @@ public class EchoServer {
                         @Override
                         protected void channelRead0(ChannelHandlerContext ctx, ByteBuffer msg) {
                             if (connectFuture.isDone()) {
-                                System.out.println("do something with the data");
+                                log.info("链接已建立...");
+                                ByteBuf buffer = ctx.alloc().buffer();
+                                buffer.writeCharSequence("1001", CharsetUtil.UTF_8);
+                                ctx.writeAndFlush(buffer.retain());
                             }
                         }
                     });
