@@ -74,23 +74,17 @@ public class HttpUtils {
     public static void load(FullHttpRequest request, ChannelHandlerContext ctx) {
         String uri = request.uri();
         File file;
-        String start = StringUtils.substringAfter(uri, ".");
-        String t;
+        String reqPath = new QueryStringDecoder(uri).path();
+        String type = StringUtils.substringAfter(reqPath, ".");
         boolean isIndex = StringUtils.equals(uri, SPLIT) || StringUtils.equals(uri, INDEX);
-        if (StringUtils.isBlank(start) || isIndex) {
+        if (StringUtils.isBlank(type) || isIndex) {
             file = new File(path + "index.html");
-            t = MimeType.HTML.name();
+            type = MimeType.HTML.name();
         } else {
-            t = StringUtils.substringBefore(start, "?");
-            t = StringUtils.isNotBlank(t) ? t : StringUtils.substringBefore(start, "/");
-            if (StringUtils.isBlank(t)) {
-                returnStatus("this resource not found", HttpResponseStatus.NOT_FOUND, request, ctx);
-                return;
-            }
             file = new File(path + uri);
         }
         try {
-            MimeType mimeType = MimeType.valueOf(t.toUpperCase());
+            MimeType mimeType = MimeType.valueOf(type.toUpperCase());
             RandomAccessFile raf = new RandomAccessFile(file, "r");
             HttpResponse response = new DefaultHttpResponse(request.protocolVersion(), HttpResponseStatus.OK);
             response.headers().set(HttpHeaderNames.CONTENT_TYPE, mimeType.value);

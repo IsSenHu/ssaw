@@ -171,7 +171,9 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
 
                 @Override
                 public void channelReadComplete(ChannelHandlerContext ctx) {
-                    log.info("响应数据完成");
+                    if (log.isDebugEnabled()) {
+                        log.debug("响应数据完成");
+                    }
                 }
             });
         }

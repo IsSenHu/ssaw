@@ -2,13 +2,11 @@ package com.ssaw.gateway.core.client;
 
 import com.ssaw.gateway.core.callback.impl.HttpCallBack;
 import com.ssaw.gateway.core.pool.HttpChannelPoolMap;
+import com.ssaw.gateway.http.util.HttpUtils;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.pool.FixedChannelPool;
-import io.netty.handler.codec.http.DefaultHttpRequest;
-import io.netty.handler.codec.http.FullHttpRequest;
-import io.netty.handler.codec.http.HttpRequest;
-import io.netty.handler.codec.http.LastHttpContent;
+import io.netty.handler.codec.http.*;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.FutureListener;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +28,8 @@ public class HttpClient {
     /**
      * 私有化构造方法
      */
-    private HttpClient() {}
+    private HttpClient() {
+    }
 
     private static final HttpChannelPoolMap POOL_MAP = HttpChannelPoolMap.getInstance();
 
@@ -42,8 +41,7 @@ public class HttpClient {
     private static final String HOST_SUFFIX = ".host";
     private static final String PORT_SUFFIX = ".port";
 
-    static
-    {
+    static {
         Set<String> keySet = BUNDLE.keySet();
         // TODO 用config来代替
         Set<String> servers = keySet.stream().map(k -> StringUtils.substringBefore(k, ".")).collect(Collectors.toSet());
@@ -55,6 +53,14 @@ public class HttpClient {
         return INSTANCE;
     }
 
+    /**
+     * Get请求 只支持url参数
+     *
+     * @param key        服务标识
+     * @param uri        路径
+     * @param connection 网关与客户端的连接
+     * @param request    客户端请求对象
+     */
     public void get(String key, String uri, ChannelHandlerContext connection, FullHttpRequest request) {
         FixedChannelPool pool = POOL_MAP.get(key);
         if (null == pool) {
@@ -63,7 +69,14 @@ public class HttpClient {
         Future<Channel> future = pool.acquire();
         future.addListener((FutureListener<Channel>) f -> {
             Channel channel = f.getNow();
+            if (null == channel) {
+                HttpUtils.returnStatus("connection is loss", HttpResponseStatus.NOT_FOUND, request, connection);
+                return;
+            }
             HttpRequest req = new DefaultHttpRequest(request.protocolVersion(), request.method(), uri);
+            // 可以过滤掉不需要传的请求头
+            // TODO 这里要优化一波
+            request.headers().forEach(e -> req.headers().add(e.getKey(), e.getValue()));
             HttpCallBack httpCallBack = new HttpCallBack(connection, key);
             POOL_MAP.addCallBack(channel, httpCallBack);
             channel.write(req);
@@ -74,5 +87,6 @@ public class HttpClient {
     /**
      * 这个方法是为了让该类去加载
      */
-    public void load() {}
+    public void load() {
+    }
 }
