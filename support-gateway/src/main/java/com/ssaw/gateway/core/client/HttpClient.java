@@ -71,7 +71,8 @@ public class HttpClient {
         });
     }
 
-    public void load() {
-        log.info("init HttpClient");
-    }
+    /**
+     * 这个方法是为了让该类去加载
+     */
+    public void load() {}
 }

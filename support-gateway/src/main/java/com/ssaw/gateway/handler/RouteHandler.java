@@ -15,7 +15,9 @@ public class RouteHandler extends SimpleChannelInboundHandler<Request> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        log.info("channelActive: {}", ctx.channel());
+        if (log.isDebugEnabled()) {
+            log.debug("{} 连接已就绪", ctx.channel());
+        }
     }
 
     @Override

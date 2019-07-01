@@ -110,7 +110,6 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
                     .remoteAddress(new InetSocketAddress(host, port));
         }
 
-
         /**
          * 使用完channel需要释放才能放入连接池
          *
@@ -120,7 +119,9 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
         public void channelReleased(Channel ch) {
             // flush掉所有写回的数据
             ch.writeAndFlush(Unpooled.EMPTY_BUFFER);
-            log.info("{} channelReleased......", ch);
+            if (log.isDebugEnabled()) {
+                log.debug("{} channelReleased......", ch);
+            }
         }
 
         /**
@@ -130,7 +131,9 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
          */
         @Override
         public void channelAcquired(Channel ch) {
-            log.info("{} channelAcquired......", ch);
+            if (log.isDebugEnabled()) {
+                log.debug("{} channelAcquired......", ch);
+            }
         }
 
         /**
@@ -149,7 +152,9 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
                 @Override
                 public void channelActive(ChannelHandlerContext ctx) {
                     // 在这里完成连接建立
-                    log.info("已成功连接到id:{}, host:{}, port:{}", id, host, port);
+                    if (log.isDebugEnabled()) {
+                        log.debug("已成功连接到id:{}, host:{}, port:{}", id, host, port);
+                    }
                 }
 
                 @Override

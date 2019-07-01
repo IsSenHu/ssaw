@@ -25,7 +25,7 @@ public class HttpStaticHandler extends SimpleChannelInboundHandler<FullHttpReque
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        cause.printStackTrace();
+        log.error("异常 ", cause);
         ctx.close();
     }
 }

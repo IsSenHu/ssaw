@@ -8,6 +8,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
+import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetSocketAddress;
 
@@ -17,6 +18,7 @@ import java.net.InetSocketAddress;
  * @author HuSen
  * create on 2019/6/28 15:03
  */
+@Slf4j
 public class GatewayServer {
     private final int port;
     private final NioEventLoopGroup group;
@@ -32,6 +34,7 @@ public class GatewayServer {
     }
 
     public void start() {
+        log.info("网关开始启动=========================================");
         ServerBootstrap bootstrap = new ServerBootstrap()
                 .group(group)
                 .channel(NioServerSocketChannel.class)
@@ -39,7 +42,7 @@ public class GatewayServer {
                 .childOption(ChannelOption.SO_KEEPALIVE, true)
                 .childHandler(createInitializer());
         bootstrap.bind().syncUninterruptibly();
-        
+        log.info("网关启动完成===================================端口:{}", port);
     }
 
     private ChannelHandler createInitializer() {
@@ -56,6 +59,7 @@ public class GatewayServer {
     }
 
     public void close() {
+        log.warn("网关开始关闭=========================================");
         group.shutdownGracefully();
     }
 }
