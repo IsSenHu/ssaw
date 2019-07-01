@@ -51,6 +51,10 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
 
     private static final Map<String, HttpChannelPoolHandler> KEY_HANDLER_MAPPING = new HashMap<>(6);
 
+    public boolean exist(String key) {
+        return KEY_HANDLER_MAPPING.containsKey(key);
+    }
+
     @Override
     protected FixedChannelPool newPool(String key) {
         HttpChannelPoolHandler handler = KEY_HANDLER_MAPPING.get(key);
@@ -176,6 +180,7 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
      * @param port port
      */
     public void build(String key, String host, Integer port) {
+        log.info("构建 Http 连接池:{}, {}, {}", key, host, port);
         HttpChannelPoolHandler handler = new HttpChannelPoolHandler(key, host, port);
         if (!KEY_HANDLER_MAPPING.containsKey(key)) {
             KEY_HANDLER_MAPPING.put(key, handler);

@@ -11,6 +11,7 @@ import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.LastHttpContent;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.FutureListener;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ResourceBundle;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
  * @author HuSen
  * create on 2019/7/1 11:29
  */
+@Slf4j
 public class HttpClient {
 
     /**
@@ -67,5 +69,9 @@ public class HttpClient {
             channel.write(req);
             channel.writeAndFlush(LastHttpContent.EMPTY_LAST_CONTENT);
         });
+    }
+
+    public void load() {
+        log.info("init HttpClient");
     }
 }

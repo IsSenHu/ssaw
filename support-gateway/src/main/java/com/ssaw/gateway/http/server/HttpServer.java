@@ -1,6 +1,6 @@
 package com.ssaw.gateway.http.server;
 
-import com.ssaw.gateway.http.handler.HttpRequestHandler;
+import com.ssaw.gateway.http.handler.HttpStaticHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -49,7 +49,7 @@ public class HttpServer {
                 // ChannelPipeline 中的下一个 ChannelHandler 将只会
                 // 收到完整的 HTTP 请求或响应
                 pipeline.addLast(new HttpObjectAggregator(64 * 1024));
-                pipeline.addLast(new HttpRequestHandler());
+                pipeline.addLast(new HttpStaticHandler());
             }
         };
     }
