@@ -29,6 +29,26 @@ import java.util.Map;
 public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChannelPool> {
 
     private static final Map<Channel, CallBack<Object>> CHANNEL_CALL_BACK_MAPPING = new HashMap<>(1000);
+
+    private static final HttpChannelPoolMap INSTANCE = new HttpChannelPoolMap();
+
+    /**
+     * 私有构造方法
+     */
+    private HttpChannelPoolMap() {}
+
+    public static HttpChannelPoolMap getInstance() {
+        return INSTANCE;
+    }
+
+    public static void removeCallBack(Channel channel) {
+        CHANNEL_CALL_BACK_MAPPING.remove(channel);
+    }
+
+    public void addCallBack(Channel channel, CallBack<Object> callBack) {
+        CHANNEL_CALL_BACK_MAPPING.put(channel, callBack);
+    }
+
     private static final Map<String, HttpChannelPoolHandler> KEY_HANDLER_MAPPING = new HashMap<>(6);
 
     @Override
@@ -60,20 +80,12 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
         return null;
     }
 
-    public void close(String key) {
-        HttpChannelPoolHandler handler = KEY_HANDLER_MAPPING.get(key);
-        if (null != handler) {
-            handler.close();
-        }
-    }
-
     /**
      * Http 的 ChannelPoolHandler
      */
     private class HttpChannelPoolHandler implements ChannelPoolHandler {
 
         private final Bootstrap bootstrap = new Bootstrap();
-        private final EventLoopGroup group;
 
         private String id;
         private String host;
@@ -83,7 +95,7 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
             this.id = id;
             this.host = host;
             this.port = port;
-            group = new NioEventLoopGroup();
+            EventLoopGroup group = new NioEventLoopGroup();
             bootstrap
                     .group(group)
                     .channel(NioSocketChannel.class)
@@ -94,9 +106,6 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
                     .remoteAddress(new InetSocketAddress(host, port));
         }
 
-        private void close() {
-            group.shutdownGracefully();
-        }
 
         /**
          * 使用完channel需要释放才能放入连接池
@@ -105,6 +114,8 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
          */
         @Override
         public void channelReleased(Channel ch) {
+            // flush掉所有写回的数据
+            ch.writeAndFlush(Unpooled.EMPTY_BUFFER);
             log.info("{} channelReleased......", ch);
         }
 
@@ -140,7 +151,7 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
                 @Override
                 public void channelRead(ChannelHandlerContext ctx, Object msg) {
                     // 在这里可以读取到响应数据
-                    CHANNEL_CALL_BACK_MAPPING.get(ctx.channel()).execute(msg);
+                    CHANNEL_CALL_BACK_MAPPING.get(ctx.channel()).execute(ctx.channel(), msg);
                 }
 
                 @Override
@@ -152,9 +163,6 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
                 @Override
                 public void channelReadComplete(ChannelHandlerContext ctx) {
                     log.info("响应数据完成");
-                    // flush掉所有写回的数据
-                    ctx.writeAndFlush(Unpooled.EMPTY_BUFFER)
-                            .addListener(ChannelFutureListener.CLOSE);
                 }
             });
         }
@@ -166,16 +174,14 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
      * @param key  远程服务标识
      * @param host host
      * @param port port
-     * @return self
      */
-    public HttpChannelPoolMap build(String key, String host, Integer port) {
+    public void build(String key, String host, Integer port) {
         HttpChannelPoolHandler handler = new HttpChannelPoolHandler(key, host, port);
         if (!KEY_HANDLER_MAPPING.containsKey(key)) {
             KEY_HANDLER_MAPPING.put(key, handler);
         } else {
             throw new IllegalArgumentException(key + " is existed");
         }
-        return this;
     }
 
     /**

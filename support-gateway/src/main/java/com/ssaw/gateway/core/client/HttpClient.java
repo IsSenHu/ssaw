@@ -1,6 +1,16 @@
 package com.ssaw.gateway.core.client;
 
+import com.ssaw.gateway.core.callback.impl.HttpCallBack;
 import com.ssaw.gateway.core.pool.HttpChannelPoolMap;
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.pool.FixedChannelPool;
+import io.netty.handler.codec.http.DefaultHttpRequest;
+import io.netty.handler.codec.http.FullHttpRequest;
+import io.netty.handler.codec.http.HttpRequest;
+import io.netty.handler.codec.http.LastHttpContent;
+import io.netty.util.concurrent.Future;
+import io.netty.util.concurrent.FutureListener;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ResourceBundle;
@@ -20,11 +30,11 @@ public class HttpClient {
      */
     private HttpClient() {}
 
-    private static final HttpChannelPoolMap POOL_MAP = new HttpChannelPoolMap();
+    private static final HttpChannelPoolMap POOL_MAP = HttpChannelPoolMap.getInstance();
 
     private static final HttpClient INSTANCE = new HttpClient();
 
-    private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("proxy.properties");
+    private static final ResourceBundle BUNDLE = ResourceBundle.getBundle("proxy");
 
     private static final String KEY_SUFFIX = ".key";
     private static final String HOST_SUFFIX = ".host";
@@ -41,5 +51,21 @@ public class HttpClient {
 
     public static HttpClient getInstance() {
         return INSTANCE;
+    }
+
+    public void get(String key, String uri, ChannelHandlerContext connection, FullHttpRequest request) {
+        FixedChannelPool pool = POOL_MAP.get(key);
+        if (null == pool) {
+            return;
+        }
+        Future<Channel> future = pool.acquire();
+        future.addListener((FutureListener<Channel>) f -> {
+            Channel channel = f.getNow();
+            HttpRequest req = new DefaultHttpRequest(request.protocolVersion(), request.method(), uri);
+            HttpCallBack httpCallBack = new HttpCallBack(connection, key);
+            POOL_MAP.addCallBack(channel, httpCallBack);
+            channel.write(req);
+            channel.writeAndFlush(LastHttpContent.EMPTY_LAST_CONTENT);
+        });
     }
 }

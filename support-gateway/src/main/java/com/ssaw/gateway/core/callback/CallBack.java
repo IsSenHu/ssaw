@@ -1,5 +1,6 @@
 package com.ssaw.gateway.core.callback;
 
+import io.netty.channel.Channel;
 
 /**
  * @author HuSen
@@ -10,7 +11,8 @@ public interface CallBack<T> {
     /**
      * 回调
      *
-     * @param msg 数据
+     * @param channel 连接
+     * @param msg     数据
      */
-    void execute(T msg);
+    void execute(Channel channel, T msg);
 }
