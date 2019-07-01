@@ -85,7 +85,6 @@ public class ProxyServer {
                                 // 在这里可以读取到响应数据
                                 DefaultHttpResponse ret = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
                                 Integer integer = ctx.channel().attr(KEY_CHANNEL).get();
-                                log.info("now {}", integer);
                                 if (msg instanceof HttpResponse)
                                 {
                                     HttpResponse response = (HttpResponse) msg;
