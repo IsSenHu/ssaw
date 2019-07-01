@@ -7,6 +7,7 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.pool.FixedChannelPool;
 import io.netty.handler.codec.http.*;
+import io.netty.util.CharsetUtil;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.FutureListener;
 import lombok.extern.slf4j.Slf4j;
@@ -66,6 +67,7 @@ public class HttpClient {
         if (null == pool) {
             return;
         }
+        System.out.println(request.content().toString(CharsetUtil.UTF_8));
         Future<Channel> future = pool.acquire();
         future.addListener((FutureListener<Channel>) f -> {
             Channel channel = f.getNow();
@@ -80,6 +82,7 @@ public class HttpClient {
             HttpCallBack httpCallBack = new HttpCallBack(connection, key);
             POOL_MAP.addCallBack(channel, httpCallBack);
             channel.write(req);
+            channel.write(new DefaultHttpContent(request.content()));
             channel.writeAndFlush(LastHttpContent.EMPTY_LAST_CONTENT);
         });
     }

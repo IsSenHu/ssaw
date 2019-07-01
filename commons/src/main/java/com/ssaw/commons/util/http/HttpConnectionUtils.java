@@ -436,4 +436,10 @@ public final class HttpConnectionUtils {
             return query.toString();
         }
     }
+
+    public static void main(String[] args) throws IOException {
+        Map<String, String> params = new HashMap<>(1);
+        params.put("name", "husen");
+        HttpConnectionUtils.doPost("http://localhost:10001/husen/index.html", params, false);
+    }
 }
