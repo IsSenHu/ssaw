@@ -8,6 +8,7 @@ import com.ssaw.gateway.server.GatewayServer;
  * create on 2019/6/28 17:33
  */
 public class GatewayServerMain {
+
     public static void main(String[] args) {
         GatewayServer gatewayServer = new GatewayServer(10001);
         gatewayServer.start();

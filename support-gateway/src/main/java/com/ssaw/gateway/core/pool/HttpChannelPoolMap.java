@@ -69,11 +69,11 @@ public class HttpChannelPoolMap extends AbstractChannelPoolMap<String, FixedChan
                     // 获取连接超时处理
                     FixedChannelPool.AcquireTimeoutAction.FAIL,
                     // 获取连接超时时间
-                    2000,
+                    5000,
                     // 最大连接数
-                    50,
+                    10000,
                     // 最大等待获取连接数
-                    1000,
+                    10000,
                     // 释放的时候是否进行健康检查
                     false,
                     // true Channel selection will be LIFO, if false FIFO

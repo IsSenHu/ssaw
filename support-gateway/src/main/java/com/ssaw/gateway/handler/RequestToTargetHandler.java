@@ -6,7 +6,6 @@ import com.ssaw.gateway.http.util.HttpUtils;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageDecoder;
 import io.netty.handler.codec.http.*;
-import io.netty.util.CharsetUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
@@ -31,7 +30,6 @@ public class RequestToTargetHandler extends MessageToMessageDecoder<FullHttpRequ
         if (is100ContinueExpected(request)) {
             HttpUtils.send100Continue(ctx);
         }
-        System.out.println(request.content().toString(CharsetUtil.UTF_8));
         String uri = request.uri();
         // 获取路由目的地标识
         String temp = StringUtils.substringAfter(uri, PREFIX);
@@ -46,6 +44,7 @@ public class RequestToTargetHandler extends MessageToMessageDecoder<FullHttpRequ
             // 获取剩余的路径
             String remain = StringUtils.substringAfter(uri, targetId);
             Request req = new Request();
+            // 浅拷贝一份 buf 再调用 retain增加一次引用计数 不然经过此handler以后 该引用计数会减1 在后面将无法使用
             req.setRequest(request.duplicate().retain());
             req.setKey(targetId);
             req.setRemain(remain);

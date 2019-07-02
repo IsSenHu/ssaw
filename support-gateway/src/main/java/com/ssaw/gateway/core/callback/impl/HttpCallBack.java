@@ -32,6 +32,7 @@ public class HttpCallBack implements CallBack<Object> {
             connection.write(cloneContent(content));
         }
         connection.writeAndFlush(LastHttpContent.EMPTY_LAST_CONTENT);
+        // 释放连接
         HttpChannelPoolMap.getInstance().get(key).release(channel);
         HttpChannelPoolMap.removeCallBack(channel);
     }

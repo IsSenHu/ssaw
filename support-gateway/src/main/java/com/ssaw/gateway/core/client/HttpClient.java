@@ -7,7 +7,6 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.pool.FixedChannelPool;
 import io.netty.handler.codec.http.*;
-import io.netty.util.CharsetUtil;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.FutureListener;
 import lombok.extern.slf4j.Slf4j;
@@ -55,7 +54,7 @@ public class HttpClient {
     }
 
     /**
-     * Get请求 只支持url参数
+     * 发送请求 经测试现在支持Get和Post常用的请求方式
      *
      * @param key        服务标识
      * @param uri        路径
@@ -67,7 +66,6 @@ public class HttpClient {
         if (null == pool) {
             return;
         }
-        System.out.println(request.content().toString(CharsetUtil.UTF_8));
         Future<Channel> future = pool.acquire();
         future.addListener((FutureListener<Channel>) f -> {
             Channel channel = f.getNow();
@@ -79,10 +77,11 @@ public class HttpClient {
             // 可以过滤掉不需要传的请求头
             // TODO 这里要优化一波
             request.headers().forEach(e -> req.headers().add(e.getKey(), e.getValue()));
+            HttpContent content = new DefaultHttpContent(request.content());
             HttpCallBack httpCallBack = new HttpCallBack(connection, key);
             POOL_MAP.addCallBack(channel, httpCallBack);
             channel.write(req);
-            channel.write(new DefaultHttpContent(request.content()));
+            channel.write(content);
             channel.writeAndFlush(LastHttpContent.EMPTY_LAST_CONTENT);
         });
     }
@@ -90,6 +89,5 @@ public class HttpClient {
     /**
      * 这个方法是为了让该类去加载
      */
-    public void load() {
-    }
+    public void load() {}
 }
